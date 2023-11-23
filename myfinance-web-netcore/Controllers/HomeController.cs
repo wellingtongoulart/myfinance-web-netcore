@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using myfinance_wev_netcore.Models;
+using myfinance_web_netcore.Models;
 
-namespace myfinance_wev_netcore.Controllers;
+namespace myfinance_web_netcore.Controllers;
 
 public class HomeController : Controller
 {
