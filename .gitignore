@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+myfinance-web-netcore/myfinance-web-netcore.sln

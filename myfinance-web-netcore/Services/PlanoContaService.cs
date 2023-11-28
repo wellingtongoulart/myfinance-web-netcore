@@ -14,6 +14,6 @@ public class PlanoContaService : IPlanoContaService
 
   public IEnumerable<PlanoConta> ListarPlanoContas()
   {
-    return _myFinanceDbContext.PlanoConta;
+    return _myFinanceDbContext.PlanoConta.ToList();
   }
 }
