@@ -35,16 +35,6 @@ public class PlanoContaService : IPlanoContaService
 
   public void Salvar(PlanoContaModel model) 
   {
-    // var instancia =  _myFinanceDbContext.PlanoConta;
-    // _mapper.Map<instancia>(PlanoContaModel model);
-
-    // PlanoConta instancia = new()
-    // {
-    //   Id = model.Id,
-    //   Descricao = model.Descricao,
-    //   Tipo = model.Tipo
-    // };
-
     PlanoConta instancia = new();
     instancia = _mapper.Map(model, instancia);
 

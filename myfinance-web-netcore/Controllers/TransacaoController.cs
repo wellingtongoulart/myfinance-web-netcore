@@ -56,7 +56,8 @@ public class TransacaoController : Controller
   [Route("Cadastro/{id}")]
   public IActionResult Cadastro(TransacaoModel model)
   {
-    _transacaoService.Salvar(model);
+    var tipoPlanoConta = _planoContaService.RetornarRegistro(model.PlanoContaId).Tipo;
+    _transacaoService.Salvar(model, tipoPlanoConta);
     return View();
   }
 

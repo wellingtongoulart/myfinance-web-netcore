@@ -8,5 +8,5 @@ public class Transacao
   public decimal Valor { get; set; }
   public int PlanoContaId { get; set; }
   public DateTime Data { get; set; }
-  public PlanoConta PlanoConta { get; set; }
+  public PlanoConta PlanoContas { get; set; }
 }

@@ -10,16 +10,13 @@ public class TransacaoService : ITransacaoService
 {
   private readonly MyFinanceDbContext _myFinanceDbContext;
   private readonly IMapper _mapper;
-  private readonly PlanoContaService _planoContaService;
 
   public TransacaoService(
     MyFinanceDbContext myFinanceDbContext, 
-    PlanoContaService planoContaService,
     IMapper mapper)
   {
     _myFinanceDbContext = myFinanceDbContext;
     _mapper = mapper;
-    _planoContaService = planoContaService;
   }
 
   public IEnumerable<TransacaoModel> ListarTransacoes()
@@ -36,14 +33,14 @@ public class TransacaoService : ITransacaoService
     return lista;
   }
 
-  public void Salvar(TransacaoModel model) 
+  public void Salvar(TransacaoModel model, string tipoPlanoConta) 
   {
-    var tipoTransacao = _planoContaService.RetornarRegistro(model.PlanoContaId).Tipo;
+
     var instancia = new Transacao() 
     {
       Id = model.Id,
       Historico = model.Historico,
-      Tipo = tipoTransacao,
+      Tipo = tipoPlanoConta,
       Valor = model.Valor,
       PlanoContaId = model.PlanoContaId,
       Data = model.Data
